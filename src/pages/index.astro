@@ -1,23 +1,14 @@
 ---
-let title = 'Sunnyside Agency';
+import Layout from "../layouts/Layout.astro";
+
+let title = "Astro Portfolio W52s #6";
+let description = "Astro Portfolio W52s #6";
+const permalink = Astro.site.href;
+let canonicalURL = Astro.request.canonicalURL;
 ---
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<title>{title}</title>
 
-	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-
-
-	
-</head>
-<body>
-	<main>
-		
-		<h1>Sunnyside Agency Landing page</h1>
-
-
-	</main>
-</body>
-</html>
+<Layout {title} {description} {permalink} current="index" {canonicalURL}>
+  <main id="main-content" aria-label="main">
+    <h1 class="h1 text-dark">Sunnyside</h1>
+  </main>
+</Layout>
