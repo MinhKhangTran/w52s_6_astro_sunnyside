@@ -1,0 +1,26 @@
+/* colors */
+.bg-primary {
+  background-color: var(--primary);
+}
+.bg-white {
+  background-color: white;
+}
+.bg-primary-light {
+  background-color: var(--primary-light);
+}
+.bg-primary-dark {
+  background-color: var(--primary-dark);
+}
+.bg-light {
+  background-color: var(--light);
+}
+
+.heading-dark {
+  color: var(--heading-dark);
+}
+.text-dark {
+  color: var(--text-dark);
+}
+.text-white {
+  color: var(--white);
+}
