@@ -1,5 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Features from "../components/Features.astro";
+import Projects from "../components/Projects.astro";
+import Testimonials from "../components/Testimonials.astro";
+import Gallery from "../components/Gallery.astro";
 
 let title = "Astro Portfolio W52s #6";
 let description = "Astro Portfolio W52s #6";
@@ -9,6 +14,10 @@ let canonicalURL = Astro.request.canonicalURL;
 
 <Layout {title} {description} {permalink} current="index" {canonicalURL}>
   <main id="main-content" aria-label="main">
-    <h1 class="h1 text-dark">Sunnyside</h1>
+    <Hero />
+    <Features />
+    <Projects />
+    <Testimonials />
+    <Gallery />
   </main>
 </Layout>
