@@ -15,7 +15,21 @@ let canonicalURL = Astro.request.canonicalURL;
 <Layout {title} {description} {permalink} current="index" {canonicalURL}>
   <main id="main-content" aria-label="main">
     <Hero />
-    <Features />
+    <Features
+      image="image-transform"
+      color="secondary"
+      title="Transform your brand"
+      text="We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you."
+      altText="An egg with a yellow background"
+    />
+    <Features
+      image="image-stand-out"
+      color="primary"
+      title="Stand out to the right audience"
+      text="Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and extend your brand in digital places."
+      reverse
+      altText="A red lamp with a red background"
+    />
     <Projects />
     <Testimonials />
     <Gallery />

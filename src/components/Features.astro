@@ -1,1 +1,107 @@
-<section id="feat" aria-label="Features section">Features</section>
+---
+interface Props {
+  image: string;
+  title: string;
+  text: string;
+  color: string;
+  reverse?: boolean;
+  altText: string;
+}
+const { image, title, text, color, reverse, altText } = Astro.props as Props;
+---
+
+<section
+  id="feat"
+  aria-label="Features section"
+  class={`${reverse ? "feat reverse" : "feat"}`}
+>
+  <div class="text_wrapper">
+    <h2 class="h2 heading-dark">{title}</h2>
+    <p class="text-blue-gray">
+      {text}
+    </p>
+    <a class={`uppercase clr-${color}`} href="#">learn more</a>
+  </div>
+  <div class="image_wrapper">
+    <picture class="feat_image">
+      <img
+        srcset={`assets/desktop/${image}.jpg, assets/mobile/${image}.jpg`}
+        sizes="(max-width: 36em), (min-width: 36em)"
+        src={`assets/desktop/${image}.jpg`}
+        alt={altText}
+      />
+    </picture>
+  </div>
+</section>
+
+<style>
+  @import url("../styles/_media.css");
+  .feat {
+    display: flex;
+    flex-direction: column-reverse;
+    @media (--md) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 1fr;
+    }
+  }
+  /* if class = reverse change direction of image_wrapper and text_wrapper with grid-row: 1*/
+  .reverse .image_wrapper {
+    grid-row: 1;
+  }
+  .image_wrapper {
+    picture,
+    img {
+      @media (--md) {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .text_wrapper {
+    text-align: center;
+    width: 90%;
+    margin-inline: auto;
+    padding-block: 4rem;
+    @media (--md) {
+      text-align: left;
+      margin-block: auto;
+      width: 60%;
+    }
+    h2 {
+      @media (--md) {
+        width: 70%;
+      }
+    }
+    p {
+      padding-block: 1.5rem 2rem;
+    }
+  }
+  .clr-secondary,
+  .clr-primary {
+    text-decoration: none;
+    color: hsl(var(--dark));
+    font-family: "Fraunces", serif;
+    position: relative;
+
+    transition: all 0.3s ease-in;
+  }
+  .clr-primary {
+    box-shadow: inset 0 -0.4rem hsl(var(--primary) / 0.5);
+    &:hover {
+      box-shadow: inset 0 -1.2rem hsl(var(--primary) / 1);
+    }
+  }
+  .clr-secondary {
+    box-shadow: inset 0 -0.4rem hsl(var(--secondary) / 0.5);
+    &:hover {
+      box-shadow: inset 0 -1.2rem hsl(var(--secondary) / 1);
+    }
+  }
+  img {
+    width: 100vw;
+    @media (--md) {
+      width: 50vw;
+    }
+  }
+</style>
