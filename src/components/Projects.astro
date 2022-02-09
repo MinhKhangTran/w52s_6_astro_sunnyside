@@ -1,1 +1,94 @@
-<section id="projects" aria-label="Projects Section">Projects</section>
+<section id="projects" aria-label="Projects Section">
+  <div class="left_panel">
+    <picture class="feat_image">
+      <source
+        media="(min-width: 36em)"
+        srcset={`assets/desktop/image-graphic-design.jpg`}
+      />
+      <source
+        media="(max-width: 36em)"
+        srcset={`assets/mobile/image-graphic-design.jpg`}
+      />
+      <img
+        srcset={`assets/desktop/image-graphic-design.jpg, assets/mobile/image-graphic-design.jpg`}
+        sizes="(min-width: 36em), (max-width: 36em)"
+        src={`assets/desktop/image-graphic-design.jpg`}
+        alt="A cherry with a green background"
+      />
+    </picture>
+    <div class="text">
+      <article>
+        <h3 class="h3 heading-dark">Graphic Design</h3>
+        <p class="">
+          Great design makes you memorable. We deliver artwork that underscores
+          your brand message and captures potential clients’ attention.
+        </p>
+      </article>
+    </div>
+  </div>
+  <div class="right_panel">
+    <picture class="feat_image">
+      <source
+        media="(min-width: 36em)"
+        srcset={`assets/desktop/image-photography.jpg`}
+      />
+      <source
+        media="(max-width: 36em)"
+        srcset={`assets/mobile/image-photography.jpg`}
+      />
+      <img
+        srcset={`assets/desktop/image-photography.jpg, assets/mobile/image-photography.jpg`}
+        sizes="(min-width: 36em), (max-width: 36em)"
+        src={`assets/desktop/image-photography.jpg`}
+        alt="A cherry with a green background"
+      />
+    </picture>
+    <div class="text">
+      <article>
+        <h3 class="h3 heading-dark">Photography</h3>
+        <p class="">
+          Increase your credibility by getting the most stunning, high-quality
+          photos that improve your business image.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import url("../styles/_media.css");
+  section {
+    display: grid;
+    @media (--md) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 1fr;
+    }
+  }
+  .left_panel,
+  .right_panel {
+    display: grid;
+
+    picture,
+    img {
+      grid-area: 1/1;
+      width: 100%;
+      object-fit: cover;
+    }
+    .text {
+      grid-area: 1/1;
+      position: relative;
+      text-align: center;
+
+      margin-top: auto;
+      padding-bottom: 4rem;
+      width: 330px;
+      margin-inline: auto;
+      @media (--md) {
+        width: 400px;
+      }
+      p {
+        padding-top: 1.5rem;
+      }
+    }
+  }
+</style>

@@ -24,9 +24,12 @@ const { image, title, text, color, reverse, altText } = Astro.props as Props;
   </div>
   <div class="image_wrapper">
     <picture class="feat_image">
+      <source media="(min-width: 36em)" srcset={`assets/desktop/${image}.jpg`}
+      />
+      <source media="(max-width: 36em)" srcset={`assets/mobile/${image}.jpg`} />
       <img
         srcset={`assets/desktop/${image}.jpg, assets/mobile/${image}.jpg`}
-        sizes="(max-width: 36em), (min-width: 36em)"
+        sizes="(min-width: 36em), (max-width: 36em)"
         src={`assets/desktop/${image}.jpg`}
         alt={altText}
       />
