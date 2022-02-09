@@ -243,6 +243,9 @@ const navArray = [
   a {
     text-decoration: none;
     color: hsl(var(--dark-gray));
+    @media (--md) {
+      color: hsl(var(--white));
+    }
   }
 
   .cta-btn {
@@ -255,6 +258,7 @@ const navArray = [
 
     @media (--md) {
       background-color: hsl(var(--white));
+      color: hsl(var(--dark));
     }
     &:hover {
       background-color: hsl(var(--secondary) / 0.5);
