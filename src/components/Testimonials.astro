@@ -1,3 +1,111 @@
-<section id="testimonials" aria-label="testimonials section">
-  Testimonials
+---
+const testiArray = [
+  {
+    id: 1,
+    image: "image-emily",
+    name: "Emily R.",
+    job: "Marketing Director",
+    text: "We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.",
+  },
+  {
+    id: 2,
+    image: "image-thomas",
+    name: "Thomas S.",
+    job: "Chief Operating Officer",
+    text: "Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience.",
+  },
+  {
+    id: 3,
+    image: "image-jennie",
+    name: "Jennie F.",
+    job: "Business Owner",
+    text: "Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!",
+  },
+];
+---
+
+<section id="testimonials" class="container" aria-label="testimonials section">
+  <h2 class="text-blue-gray uppercase text-center">Client testimonials</h2>
+  <article>
+    {testiArray.map((testi) => {
+      const { image, name, job, text } = testi;
+      return (
+        <div class="testi_wrapper">
+          <div class="image_wrapper">
+            <img
+              width="72"
+              height="72"
+              src={`/assets/${image}.jpg`}
+              alt={name}
+            />
+          </div>
+          <div class="text_wrapper">
+            <p class="text-center text-dark testi_text">{text}</p>
+            <h3 class="text-center text-dark testi_name">{name}</h3>
+            <p class="text-center text-gray-blue testi_job">{job}</p>
+          </div>
+        </div>
+      );
+    })}
+  </article>
 </section>
+
+<style>
+  @import url("../styles/_media.css");
+  section {
+    --pt: 4rem;
+    padding-top: var(--pt);
+    @media (--md) {
+      --pt: 10rem;
+    }
+  }
+  h2 {
+    font-family: "Fraunces", serif;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    @media (--md) {
+      letter-spacing: 5.76px;
+      font-size: 1.125rem;
+    }
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+    @media (--md) {
+      flex-flow: row wrap;
+      padding-inline: 7rem;
+      gap: 4rem;
+    }
+  }
+  .testi_wrapper {
+    --pt: 4rem;
+    padding-top: var(--pt);
+    @media (--md) {
+      --pt: 5rem;
+      flex: 1;
+    }
+  }
+  .image_wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  img {
+    border-radius: 50%;
+  }
+  .testi_text {
+    padding-block: 2rem;
+    line-height: 180%;
+    @media (--md) {
+      padding-block: 4rem 4.5rem;
+      line-height: 170%;
+    }
+  }
+  .testi_name {
+    font-family: "Fraunces", serif;
+    font-size: 1.125rem;
+    padding-bottom: 0.5rem;
+  }
+  .testi_job {
+    font-size: 0.875rem;
+  }
+</style>
