@@ -19,7 +19,7 @@
   color: hsl(var(--gray-blue));
 }
 .text-dark-cyan {
-  color: hsl(var(--dark-gray));
+  color: hsl(var(--dark-cyan));
 }
 .text-dark {
   color: hsl(var(--dark));

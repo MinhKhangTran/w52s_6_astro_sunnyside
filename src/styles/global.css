@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600;900&family=Fraunces:wght@700;900&display=swap");
 @import url("./_reset.css");
 @import url("./_a11y.css");
 @import url("./_typography.css");
@@ -16,7 +16,7 @@
   --secondary: 51 100% 49%;
   --tertiary: 167 40% 24%;
   --dark-blue: 198 62% 26%;
-  --dark-cyan: 168 34% 41%;
+  --dark-cyan: 168 35% 35%;
   --dark: 212 27% 19%;
   --dark-gray: 213 9% 39%;
   --blue-gray: 231 8% 47%;

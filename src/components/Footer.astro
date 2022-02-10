@@ -1,1 +1,94 @@
-<footer>Footer</footer>
+<footer>
+  <article>
+    <a class="text-center text-dark-cyan" href="/">sunnyside</a>
+    <ul class="nav ">
+      <li>
+        <a class="text-dark-cyan" href="#">About</a>
+      </li>
+      <li>
+        <a class="text-dark-cyan" href="#">Services</a>
+      </li>
+      <li>
+        <a class="text-dark-cyan" href="#">Projects</a>
+      </li>
+    </ul>
+    <ul class="socials">
+      <li>
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/assets/icon-facebook.svg" alt="Facebook" />
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/assets/icon-instagram.svg" alt="instagram" />
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/icon-twitter.svg" alt="twitter" />
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://pinterest.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/assets/icon-pinterest.svg" alt="pinterest" />
+        </a>
+      </li>
+    </ul>
+  </article>
+</footer>
+
+<style>
+  @import url("../styles/_media.css");
+  footer {
+    background-color: #90d4c5;
+    display: grid;
+    place-items: center;
+    padding-block: 3.5rem;
+    @media (--md) {
+      padding-block: 4rem;
+    }
+  }
+  a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .text-center {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 2.25rem;
+    letter-spacing: 3.68px;
+    font-weight: 900;
+  }
+  ul {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .nav {
+    gap: 4.5rem;
+    padding-top: 1.5rem;
+  }
+  .nav a {
+    transition: all 0.3s ease;
+    &:hover {
+      color: hsl(var(--white));
+    }
+  }
+  .socials {
+    gap: 1.75rem;
+    padding-top: 5.5rem;
+  }
+</style>
