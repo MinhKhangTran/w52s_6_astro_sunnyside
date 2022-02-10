@@ -11,8 +11,8 @@ const { image, title, text, color, reverse, altText } = Astro.props as Props;
 ---
 
 <section
-  id="feature"
-  aria-label="feature section"
+  id={`feature-${color}`}
+  aria-label={`feature-${color} section`}
   class={`${reverse ? "feat reverse" : "feat"}`}
 >
   <div class={`hero_text-${color} text_wrapper`}>
