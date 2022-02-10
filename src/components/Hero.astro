@@ -36,6 +36,7 @@ const navArray = [
   h1 {
     --pt: 5.5rem;
     padding-top: var(--pt);
+    animation: 1s ease hero_animator;
     @media (--md) {
       --pt: 6.375rem;
     }
@@ -43,8 +44,28 @@ const navArray = [
   .arrow {
     --pt: 3.125rem;
     padding-top: var(--pt);
+    animation: 3s infinite alternate animator;
+
     @media (--md) {
       --pt: 4.5rem;
+    }
+  }
+  @keyframes animator {
+    0% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(+10%);
+    }
+  }
+  @keyframes hero_animator {
+    0% {
+      opacity: 0;
+      transform: translateY(-10%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
     }
   }
 </style>

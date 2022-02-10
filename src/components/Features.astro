@@ -15,7 +15,7 @@ const { image, title, text, color, reverse, altText } = Astro.props as Props;
   aria-label="Features section"
   class={`${reverse ? "feat reverse" : "feat"}`}
 >
-  <div class="text_wrapper">
+  <div class={`hero_text-${color} text_wrapper`}>
     <h2 class="h2 heading-dark">{title}</h2>
     <p class="text-blue-gray">
       {text}
