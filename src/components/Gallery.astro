@@ -1,1 +1,59 @@
-<section id="gallery" aria-label="gallery section">Gallery</section>
+---
+const galleryArray = [
+  {
+    id: 1,
+    image: "image-gallery-milkbottles",
+    altText: "Milkbottles with sky background",
+  },
+  {
+    id: 2,
+    image: "image-gallery-orange",
+    altText: "Orange with orange background",
+  },
+  {
+    id: 3,
+    image: "image-gallery-cone",
+    altText: "ice cream cone with blue background",
+  },
+  {
+    id: 4,
+    image: "image-gallery-sugar-cubes",
+    altText: "Sugar cubes with red background",
+  },
+];
+---
+
+<section id="gallery" aria-label="gallery section">
+  {galleryArray.map((gallery) => {
+    const { image, altText } = gallery;
+    return (
+      <picture class="feat_image">
+        <source
+          media="(min-width: 36em)"
+          srcset={`assets/desktop/${image}.jpg`}
+        />
+        <source
+          media="(max-width: 36em)"
+          srcset={`assets/mobile/${image}.jpg`}
+        />
+        <img
+          srcset={`assets/desktop/${image}.jpg, assets/mobile/${image}.jpg`}
+          sizes="(min-width: 36em), (max-width: 36em)"
+          src={`assets/desktop/${image}.jpg`}
+          alt={altText}
+        />
+      </picture>
+    );
+  })}
+</section>
+
+<style>
+  @import url("../styles/_media.css");
+  section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @media (--md) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+</style>
